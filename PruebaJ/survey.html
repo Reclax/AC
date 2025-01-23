@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Encuesta</h1>
+        <form id="surveyForm">
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label>Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <label>¿Sabes programación orientada a objetos?</label>
+            <input type="radio" id="pregunta1Si" name="pregunta1" value="SI"> Sí
+            <input type="radio" id="pregunta1No" name="pregunta1" value="NO"> No
+            <br>
+            <label>¿Sabes PHP?</label>
+            <input type="radio" id="pregunta2Si" name="pregunta2" value="SI"> Sí
+            <input type="radio" id="pregunta2No" name="pregunta2" value="NO"> No
+            <br>
+            <button type="submit">Enviar</button>
+            <button type="button" id="cancelButton">Cancelar</button>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
