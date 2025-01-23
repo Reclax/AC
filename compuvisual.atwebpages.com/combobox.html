@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="asd">
+        <input id="numeroCombo" type="hidden" value=1>
+        <select id="c1">
+            <option>asd</option>
+            </select>
+        </form>
+        <button onClick=a()>a</button>
+        <button onClick=b()>b</button>
+
+        <script>
+
+        function a(){
+        var numero= parseInt(document.getElementById("numeroCombo").value);
+        var form=document.getElementById("asd");
+        form.innerHTML=form.innerHTML + `
+        <select id="c`+(numero+1)+`">
+        <option>asd</option>
+        </select>
+        `;
+        document.getElementById("numeroCombo").value=numero+1;
+        }
+        function b(){
+            var numero= parseInt(document.getElementById("numeroCombo").value);
+            if(numero ===1){
+                return;
+            }
+            document.getElementById("c"+numero).remove()
+            document.getElementById("numeroCombo").value=numero-1;
+        }
+        </script>
+
+        <form action="" method="post">
+            <h3>Ingresar Informacion</h3>
+            <div style="margin-bottom:10px">
+                <input name="cedula" class="easyui-textbox" required="true" label="Cedula:" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="nombre" class="easyui-textbox" required="true" label="Nombre:" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="apellido" class="easyui-textbox" required="true" label="Apellido:" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="direccion" class="easyui-textbox" required="true" label="Direccion:" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="telefono" class="easyui-textbox" required="true" label="Telefono:" style="width:100%">
+            </div>
+            <button type="submit">asd</button>
+        </form>
+</body>
+</html>

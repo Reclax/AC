@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/images.jpg" alt="">
+    <input type="number" name="" id="numero">
+    <button onclick=buscar()>Buscar</button>
+    <div>
+        <table>
+            <thead >
+                <th>Nombre</th>
+            </thead>
+            <tbody id="tabla">
+            </tbody>
+        </table>
+    </div>
+    <a href="index.php">Inicio</a>
+</body>
+<script>
+
+    function buscar() {
+        let tabla = document.getElementById("tabla");
+        tabla.innerHTML="";
+        var numero = document.getElementById("numero");
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "https://randomuser.me/api/?results=" + numero.value);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var objeto = JSON.parse(xhttp.response).results;
+                objeto.forEach(element => {
+                    let columna = document.createElement("tr");
+                    columna.innerText = element.name.first + " " + element.name.last;
+                    tabla.appendChild(columna);
+                });
+            }
+        }
+    }
+
+
+</script>
+
+</html>
